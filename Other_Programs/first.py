@@ -3583,24 +3583,100 @@ if __name__ == "__main__":
 	uniqueRows(input)
 
 #--------------------------------------------------------------------
+# Python sets 
+set1 = {1, 2, 3, 4, 5}
+print("------------------------------------------------------------")
+print(set1)
 
+# Creating a set 
+set1 = set()
+print(set1)
+set1 = set("metehan gencer  ")
+print(set1)
+# Creating a Set with the use of a list 
+set1 = set(["Geeks", "For", "Geeks"])
+print(set1)
+set2 = set(["Metehan", "Gencer", "GeeksforGeeks"])
+print(set2)
+# Creating a Set with the use of the a tuple 
+tup = ("Geeks", "For", "Geeks")
+print(set(tup))
+newTuple = ("Metehan GENCER", "is an EMbedded System Engineer")
+print(set(newTuple))    
+# Creating a Set with the use of a dictionary 
+d = {"Geeks": 1, "For": 2, "Geeks": 3}
+print(set(d))   
 
+# Creating s set
+set1 = {3, 1, 4, 1, 5, 9, 2}
 
+# Unordered: The order of elements is not preserved 
+print(set1) 
 
+# Unindexed: Accessing elements by index is not possible 
+# This will raise a type error 
+try:
+    print(set1[0])
+except TypeError as e:
+    print(e)
 
+# Creating a list 
+set1 = {1, 2, 3}
 
+# Add one item 
+set1.add(4)
+# Add multiple items 
+set1.update([5, 6, 7])
+print(set1)
+set1.update([8, 9], {10, 11, 12})
+print(set1)
+print("--------------------------------------------")
+# Accessing a Set in Py
+set1 = set(["Geeks", "For", "Geeks"])
 
+# Accessing elements using for loops
+for i in set1:
+    print(i, end = " ")
 
+# Checking the elements using in keyword 
+print("Geeks" in set1)
+#---------------------------------------------------------
+# Removing elements from the set 
 
+# Using remove method 
+set1 = {1, 2, 3, 4, 5}
+set1.remove(3)
+print(set1)
 
+# Attempting to remove an element that does not exist
+try:
+    set1.remove(10)
+except KeyError as e:
+    print("Error:", e)
 
+# Using discard method
+set1.discard(4)
+print(set1)
 
+# Attempting to discard an elements that does not exist
+set1.discard(10)      # No error raised 
+print(set1)
 
+set1 = {1, 2, 3, 4, 5}
+val = set1.pop()
+print(val)
+print(set1) 
 
+# using pop on an empty set 
+set1.clear()
+try:
+    set1.pop()
+except KeyError as e:
+    print("Error", e)
 
-
-
-
+set1 = {1, 2, 3, 7}
+set1.clear()
+print(set1)  
 
 
 
