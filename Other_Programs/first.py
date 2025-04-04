@@ -3678,29 +3678,134 @@ set1 = {1, 2, 3, 7}
 set1.clear()
 print(set1)  
 
+# Creating a frozenset from a list
+fset = frozenset([1, 2, 3, 4, 5])
+print(fset) 
 
+# Creating a frozenset from a set 
+set1 = {1, 2, 3, 4, 5, 6}
+fset = frozenset(set1)
+print("New frozeset:", fset)
+#-------------------------------------------------------------
+# Typecasting list into set
+li = [1, 2, 3, 3, 4, 5, 5, 6, 2]    # list
+set1 = set(li)
+print(set1)
 
+# Typecasting string into set
+s = "Metehan GENCER"
+set1 = set(s)
+print(set1)
 
+# Typecasting dictionary into set
+d = {1: "One", 2: "two", 3: "Three"}
+set1 = set(d)
+print(set1) 
 
+# Deep into the frozenset 
+animals = frozenset(["dog", "cat", "rabbit"])
+print("cat" in animals)
+print("elephand" in animals)
+print("rabbit" in animals)
 
+fruits = frozenset(["apple", "banana", "orange"])
+print(fruits)
+try:
+    fruits.add("cherry")
+    print(fruits)
+except:
+    print("An error occured")
 
+# passing an empty tuple 
+nu = ()
 
+# Converting tuple to frozenset 
+fnum = frozenset(nu)
 
+# Print empty frozenset object 
+print("Frozenset object is: ", fnum)
 
+l = ["Geeks", "for", "geeks"]
 
+# converting list to frozenset 
+fnum = frozenset(l)
+# printing empty frozenset object 
+print("Frozenset object is: ", fnum)
 
+# Creating a dictionary 
+Student = {"name": "Metehan", "age": 35, "sex": "Male", "colliage": "Erciyes University", "address": "Kayseri"}
+fnum = frozenset(Student)
+print(fnum)
 
+# Creating a list 
+favourite_subject = ["OS", "DMBS", "Algo"]
 
+# Creating a frozenset
+f_subject = frozenset(favourite_subject)
 
+# below line will generate error
+try:
+    f_subject[1] = "Networking"
+    print(f_subject)
+except TypeError:
+    print("A TypeError is occurred")
+print("--------------------------------------------------------------------------")
+# FrozenSet operations 
 
+# Initialize A and B
+A = frozenset([1, 2, 3, 4])
+B = frozenset([3, 4, 5, 6])
+print("A is:", A)
+print("B is:", B)
 
+# Copying a frozenset
+C = A.copy()
+print("C is:",C) 
+D = B.copy()
+print("D is:", D)   
 
+# Union 
+unionSet = A.union(B)
+print(unionSet)
 
+# Intersection 
+intersectionSet = A.intersection(B)    # Contains only the elements that are present in both sets   
+print("intersection:",intersectionSet)
 
+differenceSet = A.difference(B)
+print(differenceSet)
 
+# Symmetric difference
+symmetricDifferenceSet = A.symmetric_difference(B)
+print(symmetricDifferenceSet)
 
+# Creating a memory view of a bytearray 
+data = bytearray("hello", "utf-8")
+mv = memoryview(data)
+print("--------------------------------------------")
+print(mv[0])
+mv[1] = 105
+print(data)
+#--------------------------------------------------------------
+print("-------------------------------------------------------")
+# Creating a memory view from bytes 
+data = b'PythonAB'
+mv = memoryview(data)
 
+# Accessing individual byte using indexing 
+print(mv[6])
+print(mv[7])
+# Accessing a range of bytes using slicing 
+print(mv[0:1].tobytes())
+print("--------------------------------------------------")
 
+# Creating a bytearray for mutable data 
+arr = bytearray(b'abcde')
+mv = memoryview(arr)
+
+# Modifying a byte using indexing 
+mv[0] = 66 
+print(arr)
 
 
 
