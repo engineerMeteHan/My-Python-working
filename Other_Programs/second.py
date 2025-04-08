@@ -563,6 +563,408 @@ set2 = {}
 # union of two sets 
 print("set1 intersection set2: ", set(set1).intersection(set(set2)))
 
+set1 = {1, 2, 3}
+set2 = {4, 5, 6}
+print(set1.isdisjoint(set2))  # True, as there are no common elements
+
+set1 = {2, 4, 5, 6}
+set2 = {7, 8, 9, 10}
+set3 = {1, 2}
+
+# Checking of disjoint of two sets 
+print("set1 and set2 are disjoint?", set1.isdisjoint(set2)) # True   
+print("set1 and set3 are disjoint?", set1.isdisjoint(set3)) # False
+
+# Set 
+A = {2, 4, 5, 6}
+
+# list 
+lis = [1, 2, 3, 4, 5]
+
+# Dictionary dict, Set is formed on Keys 
+dict = {1: 'Apple', 2: "Orange"}
+
+dict2 = {"Apple": 1, 'Orange': 2}
+
+print("Set A and List lis disjoint?", A.isdisjoint(lis)) # False    
+print("Set A and dict are disjoint?", A.isdisjoint(dict)) # False   
+print("Set A and dict2 are disjoint?", A.isdisjoint(dict2)) # True      
+
+s1 = set()
+s2 = set()  
+
+# Using the isdisjoint method with empty sets   
+print(s1.isdisjoint(s2)) # True, as both sets are empty         
+
+s1 = {1, 2, 3, 4, 5}
+s2 = {4, 10}
+print(s2.issubset(s1)) # True, as s2 is a subset of s1      
+
+A = {4, 1, 3, 5}
+B = {6, 0, 4, 1, 5, 0, 3, 5}
+print(A.issubset(B)) # True, as A is a subset of B  
+print(B.issubset(A)) # False, as B is not a subset of A 
+
+A = {1, 2, 3}
+B = {1, 2, 3, 4, 5}
+C = {1, 2, 4, 5}
+
+print(A.issubset(B)) # True, as A is a subset of B
+print(B.issubset(A)) # False, as C is a subset of B
+
+print(A.issubset(C))
+print(C.issubset(B))
+
+A = {4, 1, 3, 5}
+B = {6, 0, 4, 1, 5, 0, 3, 5}
+
+print("A.issuperset(B): ", A.issuperset(B)) # False, as A is not a superset of B
+print("B.issuperset(A): ", B.issuperset(A)) # True, as B is a superset of A 
+
+A = {1, 2, 3}
+B = {1, 2, 3, 4, 5}
+C = {1, 2, 4, 5}
+ 
+print("A.issuperset(B): ", A.issuperset(B)) # False, as A is not a superset of B
+print("B.issuperset(A): ", B.issuperset(A)) # True, as B is a superset of A     
+print("A.issuperset(C): ", A.issuperset(C)) # False, as A is not a superset of C    
+print("C.issuperset(B): ", C.issuperset(B)) # False, as C is not a superset of B    
+
+setA = {1, 2, 3, 4, 5}
+setB = {6, 7, 3, 9, 4}
+print(setA.symmetric_difference(setB))
+
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+
+result = set1.symmetric_difference(set2) # Elements in either set1 or set2 but not both
+print(result) # {1, 2, 4, 5}        
+
+# Symmetric_diffrence() on a set and a list 
+A = {3, 5, 9, 8}
+B = [4, 5, 2, 1]
+
+# finding symmetric difference
+result = A.symmetric_difference(B) # Elements in either A or B but not both
+print(result) # {1, 2, 3, 4, 8, 9}
+
+set_A = {"ram", "rahim", "ajay", "rishav", "aakash"}
+set_B = {"aakash", "ajay", "shyam", "ram", "ravi"}
+print(set_A ^ set_B)
+
+A = {'p', 'a', 'w', 'a', 'n'}
+B = {'r', 'a', 'o', 'n', 'e'}
+C = {}
+
+print(A.symmetric_difference(B)) # Elements in either A or B but not both   
+print(B.symmetric_difference(A)) # Elements in either A or C but not both
+
+print(A.symmetric_difference(C))
+print(B.symmetric_difference(C)) # Elements in either B or C but not both       
+
+A = {'p', 'a', 'w', 'a', 'n'}
+B = {'r', 'a', 'o', 'n', 'e'}
+
+# resılt is always None 
+result = A.symmetric_difference_update(B) # Elements in either A or B but not both
+
+print("A = ", A)
+print("B = ", B)    
+print("result = ", result) # None       
+
+A = {'s', 'u', 'n', 'n', 'y'}
+B = {'b', 'u', 'n', 'n', 'y'}   
+
+result = A.symmetric_difference_update(B) # Elements in either A or B but not both
+
+print("A = ", A)    
+print("B = ", B)
+print("result = ", result) # None   
+
+# Python code to demonstrate working of
+# symmetric_difference_update()
+
+A = {1, 2, 3, 4, 5, 6}
+B = [4, 5, 7, 8]
+
+# passing argument as list
+
+A.symmetric_difference_update(B)
+print("A =", A)
+
+A = {2, 4, 6, 8}
+B = (i for i in range(2, 6))
+
+# passing argument as generator object
+
+A.symmetric_difference_update(B)
+print("A=", A)
+
+# --------------------------------------------------------
+s = "Geeksforgeeks"
+v = "aeiou"
+
+# Check if each vowel exists in the string 
+if all(i in s.lower() for i in v):
+    print("All vowels are present in the string")
+else:
+    print("All vowels are not present in the string")       
+
+s = "Geeksforgeeks" 
+
+# Define set of vowels 
+v = set("aeiou")
+
+# Check if all vowels present in the string (case-insensitive)
+if v.issubset(set(s.lower())):
+    print("All vowels are present in the string")
+else:
+    print("All vowels are not present in the string")
+
+# USING LOOP 
+s = "Geeksforgeeks"
+v = "aeiou"
+a = set()
+# Loop through each character in 's'
+for char in s.lower():
+    if char in v:
+        # add the vowel to the found set 
+        a.add(char) 
+    if len(a) == 5:
+        # If all vowels are found, exit early 
+        print("True")
+        break 
+else:
+    print("False")  
+#----------------------------------------------------------------------
+import re 
+s = "Geeksforgeeks" 
+
+# Check if all vowels are present using regex
+if re.search(r'(?=.*a)(?=.*e)(?=.*i)(?=.*o)(?=.*u)', s.lower()):
+    print("All vowels are present in the string")
+else:
+    print("All vowels are not present in the string")
+#----------------------------------------------------------------------
+
+a = [1, 2, 3, 4, 10]
+b = [2, 3, 5, 6, 10]
+c = [1, 2, 3, 7, 10]
+
+# Convert lists to sets and find common elements
+res = set(a) & set(b) & set(c) 
+print(f"Common elements: {res}")
+
+a = [1, 2, 3, 4, 10]
+b = [2, 3, 5, 6, 10]
+c = [1, 2, 3, 7, 10]
+
+# set comprehension to find common elements     
+res = {x for x in a if x in b and x in c}
+print(f"Common elements: {res}")
+
+a = [1, 2, 3, 4, 10]
+b = [2, 3, 5, 6, 10]
+c = [1, 2, 3, 7, 10]
+
+# filter common elements 
+res = set(filter(lambda x: x in b and x in c, a))       # Resulting common elements are converted to a set printed as the output
+print(f"Common elements: {res}")
+
+#----------------------------------------------------------------------
+### Find missing and additional values in two lists 
+
+a = [1, 2, 3, 4, 5, 6]
+b = [4, 5, 6, 7, 8]
+
+# missing values in a (values in b but not in a)
+missingInA = [x for x in b if x not in a]
+
+# Additional values in a (values in a but not in b)
+additionalInA = [x for x in a if x not in b]
+
+# Missing values in b (values in a not in b)
+missingInB = [x for x in a if x not in b]
+
+# Additional values in b (values in b not in a)
+additionalInB = [x for x in b if x not in a]
+print("-------------------------------------------------------")
+print("Missing in a:", missingInA)
+print("Additional in a:", additionalInA)
+print("Missing in b:", missingInB)
+print("Additional in b:", additionalInB)
+
+a = [1, 2, 3, 4, 5, 6]
+b = [4, 5, 6, 7, 8]
+
+# Convert lists to sets
+setA = set(a)   
+setB = set(b)   
+
+# Missing values in a (elements in b but not in a)
+MissingInA = list(setA - setB)  
+
+# Additional values in a (elements in a but not in b)   
+additionalInA = list(setA - setB)
+
+# missing values in b (elements in a but not in b)
+MissingInB = list(setB - setA)
+
+# Additional values in b (elements in b but not in a)
+additionalInB = list(setB - setA)
+
+print(missingInA)
+print(additionalInA)
+print(MissingInB)
+print(additionalInB)
+
+import numpy as np 
+
+# List 1 and List 2 
+a = np.array([1, 2, 3, 4, 5, 6])
+b = np.array([4, 5, 6, 7, 8])
+
+# Missing values in a (values in b not in a)    
+missingInA = np.setdiff1d(b, a)
+
+# Additional values in a (values in a not in b)
+AdditionalInA = np.setdiff1d(a, b)  
+
+# Missing values in a (values in a not in b)
+missingInB = np.setdiff1d(a, b) 
+
+# Additional values in b (values in b not in a) 
+additionalInB = np.setdiff1d(b, a)      
+
+print("Missing in a:", missingInA)
+print("Additional in a:", AdditionalInA)
+print("Missing in b:", missingInB)
+print("Additional in b:", additionalInB)
+
+# Using loop 
+a = [1, 2, 3, 4, 5, 6]
+b = [4, 5, 6, 7, 8] 
+
+# Empty lists to store missinf and additional values 
+missingInA = [] 
+additionalInA = []
+missingInB = []
+additionalInB = []
+
+# Check for missing and additional values in both lists 
+for x in a: 
+    if x not in b:
+        missingInB.append(x)
+
+for x in b:
+    if x not in a:
+        missingInA.append(x)
+    
+print("Missing in a:", missingInA)
+print("Additional in a:", additionalInA)
+print("Missing in b:", missingInB)
+print("Additional in b:", additionalInB)
+#-----------------------------------------------------------------
+
+def has_all_letters(s):
+    mask = 0
+    for char in s.lower():
+        if 'a' <= char <= 'z':
+            mask |= (1 << (ord(char) - ord('a')))
+    return mask == ALL_LATER
+
+ALL_LATER = (1 << 26) - 1   # All letters in bit format 
+print(has_all_letters("The quick brown fox jumps over the lazy dog"))
+
+def get_letter_mask(s):
+    mask = 0
+    for char in s.lower():
+        if 'a' <= char <= 'z':
+            mask |= (1 << (ord(char) - ord('a')))   
+    return mask 
+
+mask = get_letter_mask("Hello")
+print(hex(mask))
+print("---------------------------------------------------")    
+
+ALL_LATER = (1 << 26) - 1   # All letters in bit format
+
+# Initializes counter c 
+c = 0
+a = ['abcdefgh', 'geeksforgeeks', 'lmnopqrst', 'abc', 'metehan']
+b = ['ijklmnopqrstuvwxyz', 'abcdefghijklmnopqrstuvwxyz', 'defghijklmnopqrstuvwxyz']
+
+for s1 in a: 
+    for s2 in b: 
+        # Get bitmask representation of s1
+        mask1 = 0 
+        for char in s1: 
+            mask1 |= (1 << (ord(char) - ord('a')))
+
+        # Get bitmask representation of s2      
+        mask2 = 0
+        for char in s2: 
+            mask2 |= (1 << (ord(char) - ord('a')))
+        res = mask1 | mask2
+        if res == ALL_LATER:
+            c += 1
+
+print(c)
+
+# Using set 
+
+a = ['abcdefgh', 'geeksforgeeks', 'lmnopqrst', 'abc', 'metehan', "a"]
+b = ['ijklmnopqrstuvwxyz', 'abcdefghijklmnopqrstuvwxyz', 'defghijklmnopqrstuvwxyz']
+
+c = 0
+for i in a: 
+    for j in b: 
+        combine = i + j 
+        if len(set(combine)) == 26:
+            c += 1
+print(c)    
+
+from collections import Counter 
+
+a = ['abcdefgh', 'geeksforgeeks', 'lmnopqrst', 'abc', 'metehan', 'Metehan Gencer']
+b = ['ijklmnopqrstuvwxyz', 'abcdefghijklmnopqrstuvwxyz', 'defghijklmnopqrstuvwxyz', 'Embedded Systems'] 
+
+c = 0       # Initialize count
+for i in a: 
+    for j in b:
+        combine = i + j
+        char_count = Counter(combine) # Count the characters in the combined string
+        if len(char_count) == 26 and all(char_count[chr(k + ord('a'))] > 0 for k in range(26)): # Ensures the combined string has 26 unique character 
+            c += 1
+print(c)
+#-------------------------------------------------------------------------------------------------------------------
+# Functions to check whether a given string is Hererogram or not 
+
+def heterogram(input):
+    # Separate out list of alphabets using list comprehension 
+    # ord function returns ascii value of character
+    alphabets = [ch for ch in input if (ord(ch) >= ord('a') and ord(ch) <= ord('z'))]
+    # convert list of alphabets into set and compare lenght 
+    if len(set(alphabets)) == len(alphabets):
+        print('Yes')
+    else:
+        print('No')
+
+# Driver Program 
+if __name__ == "__main__":
+    input = "the big dwarf only jumps"
+    heterogram(input) # Yes     
+#-------------------------------------------------------------------------------------------------------------------
+def is_heterogram(string):
+    sorted_string = sorted(string.lower())  
+    for i in range(1, len(sorted_string)):
+        if sorted_string[i] == sorted_string[i - 1] and sorted_string[i].isalpha():
+            return 'No'
+    return 'Yes'
+
+string = "the big dwarf only jumps" 
+print(is_heterogram(string)) # Yes      
+print("Mete==", ord("d"))
 
 
 
@@ -570,6 +972,63 @@ print("set1 intersection set2: ", set(set1).intersection(set(set2)))
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           
 
 
 
